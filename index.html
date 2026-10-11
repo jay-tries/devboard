@@ -1,0 +1,87 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>DevBoard | Task Manager</title>
+  <link rel="stylesheet" href="style.css">
+  <script src="script.js" defer></script>
+</head>
+<body>
+  <header class="header">
+    <h1>DevBoard<span>.</span></h1>
+    <p>Your space to get things done.</p>
+  </header>
+
+  <main class="container">
+    <section class="welcome">
+      <p class="eyebrow">YOUR WORKSPACE</p>
+      <h2>Make today count.</h2>
+      <p>Small steps. Consistent progress.</p>
+    </section>
+
+    <section class="task-panel">
+      <h2>My Tasks</h2>
+
+      <form id="task-form">
+        <input id="task-input" type="text"
+          placeholder="What needs to get done?"
+          aria-label="New task" maxlength="120" required>
+        <button type="submit">Add task +</button>
+      </form>
+
+      <div class="toolbar">
+        <input id="search-input" type="search"
+          placeholder="Search tasks..." aria-label="Search tasks">
+        <select id="filter-select" aria-label="Filter tasks">
+          <option value="all">All tasks</option>
+          <option value="active">Active</option>
+          <option value="completed">Completed</option>
+        </select>
+      </div>
+
+      <div class="stats">
+  <div class="stat-card">
+    <span>Total tasks</span>
+    <strong id="total-count">0</strong>
+  </div>
+  <div class="stat-card">
+    <span>Active</span>
+    <strong id="active-count">0</strong>
+  </div>
+  <div class="stat-card">
+    <span>Completed</span>
+    <strong id="completed-count">0</strong>
+  </div>
+</div>
+
+<div class="progress-section">
+  <div class="progress-heading">
+    <span>Overall progress</span>
+    <span id="progress-label">0%</span>
+  </div>
+  <div
+    class="progress-track"
+    role="progressbar"
+    aria-label="Task completion progress"
+    aria-valuemin="0"
+    aria-valuemax="100"
+    aria-valuenow="0"
+    id="progress-track">
+    <div id="progress-bar"></div>
+  </div>
+</div>
+
+<p id="task-count">0 tasks</p>
+<button id="clear-completed" type="button">
+  Clear completed
+</button>
+<ul id="task-list"></ul>
+      <p id="empty-message">No tasks yet. Add your first one!</p>
+    </section>
+  </main>
+
+  <footer>Built with focus by Jay Tiwari.</footer>
+</body>
+</html>
